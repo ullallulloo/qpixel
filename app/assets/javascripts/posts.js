@@ -141,6 +141,7 @@ $(() => {
         });
         window.converter.use(window.markdownitFootnote);
         window.converter.use(window.latexEscape);
+        window.converter.use(window.moshidact);
       }
       window.setTimeout(() => {
         const converter = window.converter;
@@ -164,6 +165,9 @@ $(() => {
         }
         if (window['hljs']) {
           hljs.highlightAll();
+        }
+        if (window['moshidact']) {
+          moshidact.runPass();
         }
       }, 1000);
     };
